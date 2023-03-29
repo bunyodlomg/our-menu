@@ -1,0 +1,10 @@
+.loader {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+}
+
+.loader img {
+    width: 300px;
+    height: 300px;
+}
