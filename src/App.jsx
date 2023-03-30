@@ -7,10 +7,8 @@ import { useFetch } from './hooks/useFetch'
 
 
 function App() {
-  const link = JSON.parse(localStorage.getItem('url'));
-  const [url, setUrl] = useState(link)
+  const [url, setUrl] = useState('https://my-json-server.typicode.com/bunyodlomg/db/menu')
   const { data, error, isPanding } = useFetch(url)
-  localStorage.setItem('url', JSON.stringify(url));
 
   return (
     <section className="menu">
