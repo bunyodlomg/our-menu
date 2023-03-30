@@ -4,7 +4,6 @@ const useFetch = (url) => {
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
     const [isPanding, setIsPanding] = useState(true)
-
     useEffect(() => {
         const getData = async (link) => {
             try {

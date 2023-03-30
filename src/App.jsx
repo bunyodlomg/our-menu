@@ -7,7 +7,7 @@ import { useFetch } from './hooks/useFetch'
 
 
 function App() {
-  const [url, setUrl] = useState('https://my-json-server.typicode.com/bunyodlomg/db/menu')
+  const [url, setUrl] = useState('http://localhost:3000/menu')
   const { data, error, isPanding } = useFetch(url)
 
   return (
