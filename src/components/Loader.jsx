@@ -3,7 +3,7 @@ import './Loader.css'
 function Loader() {
     return (
         <div className='loader'>
-            <img src="../../public/images/loader.gif" alt="" />
+            <img src="./images/loader.gif" alt="Loader" />
         </div>
     )
 }
