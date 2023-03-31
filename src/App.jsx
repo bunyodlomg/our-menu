@@ -1,26 +1,28 @@
-import { useState } from 'react'
 import './App.css'
-import Buttons from './components/Buttons'
-import Cards from './components/Cards'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import AllMenu from './pages/AllMenu'
+import Breakfast from './pages/Breakfast'
+import Lunch from './pages/Lunch'
+import Shakes from './pages/Shakes'
 import Loader from './components/Loader'
 import { useFetch } from './hooks/useFetch'
-
-
+import NotFound from './components/notFound'
 function App() {
-  const [url, setUrl] = useState('http://localhost:3000/menu')
-  const { data, error, isPanding } = useFetch(url)
+  const { isPanding, error } = useFetch()
 
   return (
-    <section className="menu">
-      <div className="title">
-        <h2>our menu</h2>
-        <div className="underline"></div>
-
-      </div>
-      <Buttons setUrl={setUrl} />
+    <Router>
+      <Header />
       {isPanding && <Loader />}
-      {!isPanding && <Cards data={data} />}
-    </section>
+      {!isPanding && <Routes>
+        <Route path='/' element={<AllMenu />} />
+        <Route path='/breakfast' element={<Breakfast />} />
+        <Route path='/lunch' element={<Lunch />} />
+        <Route path='/shakes' element={<Shakes />} />
+        <Route path='/*' element={<NotFound />} />
+      </Routes>}
+    </Router>
   )
 }
 

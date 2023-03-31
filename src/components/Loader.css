@@ -1,10 +1,17 @@
 .loader {
-    height: 20vh;
+    transform: translateY(-50px);
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .loader img {
     width: 300px;
     height: 300px;
+}
+
+.not-found img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
